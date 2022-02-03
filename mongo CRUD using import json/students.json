@@ -1,0 +1,57 @@
+
+    {
+        "_id":1,
+        "name":"Aurelia Menendez",
+        "age":21,
+        "book_id":[12,13]
+        
+    }
+
+    {
+        "_id":2,"name":"Corliss Zuk",
+        "age":26,
+        "book_id":1
+        
+    }
+    {
+        "_id":3,"name":"Bao Ziglar",
+        "age":22,
+        "book_id":10
+    }
+    {
+        "_id":4,"name":"Zachary Langlais",
+        "age":26,
+        "book_id":6
+        
+    }
+    {
+        "_id":5,"name":"Wilburn Spiess",
+        "age":25,
+        "book_id":7
+        
+    }
+    {
+        "_id":6,"name":"Jenette Flanders",
+        "age":27,
+        "book_id":3
+    }
+    {
+        "_id":7,"name":"Salena Olmos",
+        "age":28,
+        "book_id":8
+    }
+    {
+        "_id":8,"name":"Daphne Zheng",
+        "age":22,
+        "book_id":11
+    }
+    {
+        "_id":9,"name":"Sanda Ryba",
+        "age":20,
+        "book_id":12
+    }
+    {
+        "_id":10,"name":"Denisha Cast",
+        "age":23,
+        "book_id":12
+    }

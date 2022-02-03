@@ -1,0 +1,19 @@
+
+mongoimport books.json -d testDB -c books --drop
+mongoimport grades.json -d testDB -c grades --drop
+mongoimport students.json -d testDB -c students --drop
+
+mongosh   //https://www.mongodb.com/try/download/shell?jmp=docs
+show dbs
+use testDB
+db.students.aggregate([
+  {
+     $lookup:
+       {
+         from: "books",
+         localField: "book_id",
+         foreignField: "_id",
+         as: "book"
+       }
+   }
+]).pretty()

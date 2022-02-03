@@ -1,0 +1,6 @@
+djongo
+django
+
+and
+makemigrations
+migrate

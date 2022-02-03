@@ -1,0 +1,80 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="col-sm-12">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <!-- <th class="text-center h3">id</th> -->
+                    <th class="text-center h3">name</th>
+                    <th class="text-center  h3">score</th>                         
+                </tr>
+            </thead>
+            {% for data in dataset %}                
+            <tbody>
+                <tr>                                       
+                    <td class="h4">{{ data.name }}</td>
+                    <td class="h4">{{ data.score }}</td>                             
+                    <td class="text-center col-sm-1">
+                        <a href="../update/{{ data.id }}">
+                           <img src="https://img.icons8.com/ios-glyphs/30/000000/approve-and-update--v1.png"/>
+                        </a>
+                        <a href="../{{ data.id }}/delete">
+                            <img src="https://img.icons8.com/small/32/000000/filled-trash.png"/>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+            {% endfor %}    
+        </table>        
+    </div>    
+</div>
+{% endblock %}
+
+{% block pagination %}
+<div class="container p-4">
+    <div class="pagination justify-content-center">
+        <li class="page-item">
+          {% if dataset.has_previous %}       
+          <li>
+              <a class="page-link" href="?page=1">&laquo; first</a>
+          </li>     
+          <li>
+              <a class="page-link" href="?page={{ dataset.previous_page_number }}">previous</a>
+          </li>
+          {% endif %}
+
+            <li class="page-link" class="current">
+                Page {{ dataset.number }} of {{ dataset.paginator.num_pages }}
+            </li>
+
+          {% if dataset.has_next %}
+            <a class="page-link" href="?page={{ dataset.next_page_number }}">next</a>
+            <a class="page-link" href="?page={{ dataset.paginator.num_pages }}">last &raquo;</a>
+          {% endif %}
+        </li>
+    </div>
+</div>
+{% endblock %}    
+
+{% block plot %}
+<div class="d-flex justify-content-center col-sm-12">
+    <div>
+        <img src="data:image/png;base64,{{data_plt1}}" alt="sdf" height="500",width="500">
+        <img src="data:image/png;base64,{{data_plt2}}" alt="sdf" height="500",width="500"><br>
+        <img src="data:image/png;base64,{{data_plt3}}" alt="sdf" height="500",width="500">
+        <img src="data:image/png;base64,{{data_plt4}}" alt="sdf" height="500",width="500">
+        
+    </div>
+</div>
+{% endblock %}    
+{% block ML %}
+<div class="d-flex justify-content-center col-sm-12 mt-5">
+    <div>
+        <h2 style="text-align: center;">Machine Learning (K-means clustering)</h2>
+        <p class="text-center h4">6 clusters</p>
+        <img src="data:image/png;base64,{{ML}}" alt="sdf" height="500",width="500">
+    </div>
+</div>
+{% endblock %}    
